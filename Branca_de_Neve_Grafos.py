@@ -1,10 +1,3 @@
-def mostrar_cena(cena, escolhas):
-    print(f"\n{cena}")
-    for i, escolha in enumerate(escolhas, start=1):
-        print(f"{i}. {escolha}")
-    opcao = input("\nEscolha uma opção: ")
-    return opcao
-
 # Dicionário de Cenas
 cenas = {
     0: "INÍCIO: Madrasta pergunta ao espelho se há alguém mais bela que ela.",
@@ -37,8 +30,6 @@ finais = {
     7: "OITAVO FIM: Branca e o Príncipe vivem felizes para sempre."
 }
 
-finais = {}
-
 # Matriz de Adjacência (Grafo)
 grafo = [
     [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], # Início
@@ -68,10 +59,14 @@ def iniciar_jogo():
             print("\nFim de jogo!")
             break
         print("Escolhas:")
-        for i, conexao in enumerate(conexoes, start=1):
-            print(f"{i}. {cenas[conexao]}")
+        print(f"1. {escolhas[posicao][0]}")
+        print(f"2. {escolhas[posicao][1]}")
         escolha = int(input("\nEscolha uma opção: ")) - 1
-        posicao = conexoes[escolha]
+        if escolha == 0:
+            print(f"\n{finais[posicao]}")
+            print("\nFim de jogo!")
+            break
+        posicao+=1
 
 if __name__ == "__main__":
     iniciar_jogo()
