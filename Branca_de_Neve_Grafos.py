@@ -57,6 +57,9 @@ def carregar_cena(numero_cena):
 
 def iniciar_jogo():
     print("\n================== Branca de Neve e as Sete Versões ==================\n")
+    print("PRÓLOGO\n")
+    print("\n" + carregar_cena("PROLOGO")) 
+    print("\n================== Branca de Neve e as Sete Versões ==================\n")
     posicao = 0
 
     while posicao in grafo:  # Continua enquanto não alcançar um fim
